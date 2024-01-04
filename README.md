@@ -19,7 +19,9 @@
 ```
 
 ### Menu:
-`Please choise: (R)ock, (P)aper, (S)cissors, (Q)uit:`
+```
+Please choise: (R)ock, (P)aper, (S)cissors, (Q)uit:
+```
 - **R** or **r** to choose rock
 - **P** or **p** to choose paper
 - **S** or **s** to choose scissors
@@ -164,6 +166,12 @@ Paper vs Rock
 
 You win
 ```
+
+## Using Xbox 360 Controller (only Windows)
+```
+Please choise: [X]Rock, [A]Paper, [Y]Scissors, [B]Quit:
+```
+Execute `python winxbox.py`
 
 ## Commands
 Run the game

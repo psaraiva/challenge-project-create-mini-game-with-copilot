@@ -1,12 +1,10 @@
 import unittest
 from core import *
 
-class TestGetComputerChoice(unittest.TestCase):
+class TestCore(unittest.TestCase):
     def test_getComputerChoice(self):
         got = getComputerChoice()
         assert got in inputTool
-
-class TestCheckWin(unittest.TestCase):
     def test_checkWin(self):
         self.assertEqual(checkWin('R', 'R'), 0)
         self.assertEqual(checkWin('R', 'S'), 1)

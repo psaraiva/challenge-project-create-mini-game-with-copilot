@@ -1,3 +1,6 @@
+def menuXbox():
+    return "Please choise: [X]Rock, [A]Paper, [Y]Scissors, [B]Quit: "
+
 def resultGame(isWin):
     if isWin == -1:
         return "You lose"

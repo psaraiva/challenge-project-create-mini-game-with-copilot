@@ -2,21 +2,27 @@ import unittest
 from visualtext import *
 
 class TestVisualText(unittest.TestCase):
+    def test_menuXbox(self):
+        self.assertEqual(menuXbox(), "Please choise: [X]Rock, [A]Paper, [Y]Scissors, [B]Quit: ")
+
     def test_resultGame(self):
         self.assertEqual(resultGame(-1), "You lose")
         self.assertEqual(resultGame(0), "Draw")
         self.assertEqual(resultGame(1), "You win")
         self.assertEqual(resultGame(10), "unknown")
+
     def test_playerTool(self):
         self.assertEqual(playerTool("R"), playerRock())
         self.assertEqual(playerTool("P"), playerPaper())
         self.assertEqual(playerTool("S"), playerScissors())
         self.assertEqual(playerTool("A"), "unknown")
+
     def test_computerTool(self):
         self.assertEqual(computerTool("R"), computerRock())
         self.assertEqual(computerTool("P"), computerPaper())
         self.assertEqual(computerTool("S"), computerScissors())
         self.assertEqual(computerTool("A"), "unknown")
+
     def test_playerRock(self):
         expect = """
     PLAYER        
@@ -28,6 +34,7 @@ class TestVisualText(unittest.TestCase):
 ---.__(___)       
 """
         self.assertEqual(playerRock(), expect)
+
     def test_playerScissors(self):
         expect = """
     PLAYER        
@@ -39,6 +46,7 @@ class TestVisualText(unittest.TestCase):
 ---.__(___)       
 """
         self.assertEqual(playerScissors(), expect)
+
     def test_playerScissors(self):
         expect = """
     PLAYER        
@@ -50,6 +58,7 @@ class TestVisualText(unittest.TestCase):
 ---.__________)   
 """
         self.assertEqual(playerPaper(), expect)
+
     def test_computerRock(self):
         expect = """
     CPU           
@@ -61,6 +70,7 @@ class TestVisualText(unittest.TestCase):
     (___)__.---   
 """
         self.assertEqual(computerRock(), expect)
+
     def test_computerScissors(self):
         expect = """
       CPU         
@@ -72,6 +82,7 @@ class TestVisualText(unittest.TestCase):
       (___)__.--- 
 """
         self.assertEqual(computerScissors(), expect)
+
     def test_computerPaper(self):
         expect = """
       CPU         
@@ -83,6 +94,7 @@ class TestVisualText(unittest.TestCase):
    (__________.---
 """
         self.assertEqual(computerPaper(), expect)
+
     def test_playerRockComputerRock(self):
         expect = """
     PLAYER            CPU           
@@ -94,6 +106,7 @@ class TestVisualText(unittest.TestCase):
 ---.__(___)           (___)__.---   
 """
         self.assertEqual(playerRockComputerRock(), expect)
+
     def test_playerRockComputerPaper(self):
         expect = """
     PLAYER              CPU         
@@ -105,6 +118,7 @@ class TestVisualText(unittest.TestCase):
 ---.__(___)          (__________.---
 """
         self.assertEqual(playerRockComputerPaper(), expect)
+
     def test_playerRockComputerScissors(self):
         expect = """
     PLAYER              CPU         
@@ -116,6 +130,7 @@ class TestVisualText(unittest.TestCase):
 ---.__(___)             (___)__.--- 
 """
         self.assertEqual(playerRockComputerScissors(), expect)
+
     def test_playerScissorsComputerScissors(self):
         expect = """
     PLAYER              CPU         
@@ -127,6 +142,7 @@ class TestVisualText(unittest.TestCase):
 ---.__(___)             (___)__.--- 
 """
         self.assertEqual(playerScissorsComputerScissors(), expect)
+
     def test_playerScissorsComputerRock(self):
         expect = """
     PLAYER            CPU           
@@ -138,6 +154,7 @@ class TestVisualText(unittest.TestCase):
 ---.__(___)           (___)__.---   
 """
         self.assertEqual(playerScissorsComputerRock(), expect)
+
     def test_playerScissorsComputerPaper(self):
         expect = """
     PLAYER              CPU         
@@ -149,6 +166,7 @@ class TestVisualText(unittest.TestCase):
 ---.__(___)          (__________.---
 """
         self.assertEqual(playerScissorsComputerPaper(), expect)
+
     def test_playerPaperComputerPaper(self):
         expect = """
     PLAYER              CPU         
@@ -160,6 +178,7 @@ class TestVisualText(unittest.TestCase):
 ---.__________)      (__________.---
 """
         self.assertEqual(playerPaperComputerPaper(), expect)
+
     def test_playerPaperComputerScissors(self):
         expect = """
     PLAYER              CPU         
@@ -171,6 +190,7 @@ class TestVisualText(unittest.TestCase):
 ---.__________)         (___)__.--- 
 """
         self.assertEqual(playerPaperComputerScissors(), expect)
+
     def test_playerPaperComputerRock(self):
         expect = """
     PLAYER            CPU           
